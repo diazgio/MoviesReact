@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import './App.css';
+import PageWrapper from './PageWrapper';
+import Pelicula from './pelicula';
+import peliculasJsom from './peliculas.json';
+import Pagination from './pagination';
 
 function App() {
+  let peliculas = peliculasJsom;
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PageWrapper>
+
+      {peliculas.map((p) => 
+        <Pelicula
+          img={p.img}
+          title={p.title}
+          year={p.year}
+          rate={p.rate}
+          director={p.director}
+          director2={p.director2}
+          actor1={p.actor1}
+          actor2={p.actor2}
+          actor3={p.actor3}>
+          {p.describe}
+        </Pelicula>
+      )}
+      <Pagination page={2} total={4} onChange={(page) => {
+
+      }}/>
+
+    </PageWrapper>
   );
 }
 
