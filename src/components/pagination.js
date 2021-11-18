@@ -1,16 +1,17 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
 export default function Pagination(props) {
 
   const getActulPage = () => {
     const result = [];
 
     for (let i = 0; i < props.total; i++) {
-      let pagina = i + 1;
+      let page = i + 1;
       result.push(
-        <a key={i} onClick={() => props.onChange(pagina)}
-          className={props.page === pagina ? 'active' : ''}>
-          {pagina}
+        <a key={i} onClick={() => props.onChange(page)}
+          className={props.page === page ? 'active' : ''}>
+          {page}
         </a>
       );
     }

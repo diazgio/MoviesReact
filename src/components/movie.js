@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-export default function Pelicula(props) {
+import React from 'react';
+
+export default function Movie(props) {
 
   return(
     <div className="movie-item-style-2">
